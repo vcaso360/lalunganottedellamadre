@@ -1,0 +1,445 @@
+:root {
+    --bg-main: #2D2E32;      /* Grigio scuro superfici */
+    --bg-darker: #1C1C1E;    /* Grigio più profondo per Navbar/Footer */
+    --accent: #8E8E93;       /* Grigio Apple per testi secondari e linee */
+    --text-primary: #F5F5F7; /* Bianco sporco/avorio per testi principali */
+    --silver: #C0C0C0;
+}
+
+* { box-sizing: border-box; text-decoration: none;}
+
+/*inizio index*/
+/* --- SEZIONE INDEX CON SWIPER --- */
+.index-body {
+    background-color: var(--bg-main);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 450px; /* Perfetto per Mobile */
+    padding: 20px 0 100px 0;
+}
+
+.home-hero { text-align: center; margin-bottom: 30px; }
+.hero-logo { height: 120px; margin-bottom: 15px; }
+.main-title { font-family: 'Cinzel'; font-size: 1.5rem; letter-spacing: 3px; }
+.home-year { font-size: 0.7rem; color: var(--accent); letter-spacing: 5px; }
+
+/* CARD SWIPER */
+.slide-container { width: 100%; padding: 20px 0; }
+.slide-content { margin: 0 20px; overflow: hidden; border-radius: 20px; }
+
+.card {
+    border-radius: 20px;
+    background-color: #3A3A3C; /* Grigio leggermente più chiaro del fondo */
+    border: 0.5px solid var(--accent);
+}
+
+.image-content {
+    position: relative;
+    padding: 25px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-darker);
+    border-radius: 20px 20px 0 100px; /* Effetto curva del tuo snippet */
+}
+
+.card-image {
+    position: relative;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    background: var(--bg-main);
+    padding: 3px;
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--accent);
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 20px;
+}
+
+.name {
+    font-family: 'Cinzel';
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.description {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+.button {
+    border: 1px solid var(--silver);
+    font-size: 0.8rem;
+    color: var(--text-primary);
+    padding: 10px 25px;
+    background-color: transparent;
+    border-radius: 4px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-family: 'Cinzel';
+    transition: all 0.3s ease;
+}
+
+.button:active { background-color: var(--accent); color: #000; }
+
+/* PAGINATION E NAV */
+.swiper-navBtn { color: var(--accent); scale: 0.7; }
+.swiper-pagination-bullet-active { background-color: var(--silver); }
+/* FOOTER SPECIFICO PER INDEX (CENTRATO) */
+.index-footer {
+    justify-content: center !important; /* Forza il centramento assoluto */
+    height: 70px; /* Un po' più di respiro */
+}
+
+.index-footer .footer-center-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Spazio tra IG e FB */
+    width: auto; /* Non occupa tutto lo schermo, si stringe sui contenuti */
+}
+
+/* Stile per i testi dei social */
+.info-item span {
+    font-size: 0.55rem;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 3px;
+    text-align: center;
+}
+
+.info-item a {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    font-size: 0.75rem; /* Leggermente più grande per essere cliccabile */
+    font-weight: 500;
+    text-align: center;
+}
+
+.v-divider {
+    width: 1px;
+    height: 25px;
+    background: var(--accent);
+    opacity: 0.3;
+}
+
+/* Fix per evitare che lo slider finisca sopra il footer su schermi piccoli */
+.slide-container {
+    padding-bottom: 40px;
+}
+/*fine index*/
+
+
+
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 80px;
+    background: var(--bg-darker);
+    border-bottom: 0.5px solid var(--accent);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+    position: relative;
+}
+
+.logo-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 55px;
+    width: auto;
+    filter: brightness(1.1);
+}
+
+.menu-btn {
+    color: var(--accent);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 70px;
+}
+
+.nav-spacer { width: 70px; }
+
+/* MENU */
+.nav-links {
+    display: none;
+    background: var(--bg-darker);
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav-links.active { display: block; border-bottom: 0.5px solid var(--accent); }
+.nav-links li a { color: var(--text-primary); text-decoration: none; display: block; padding: 12px; font-size: 0.9rem; }
+
+/* HEADER */
+.artist-header { padding: 30px 0 10px 0; text-align: center; }
+
+.artist-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    margin: 1px;
+}
+
+.separator-line {
+    width: 100%;
+    height: 0.5px;
+    background-color: var(--accent);
+    margin: 20px 0;
+    opacity: 0.6;
+}
+
+.collection-title { color: var(--accent); font-size: 0.85rem; letter-spacing: 4px; font-weight: 400; }
+
+/* CAROSELLO */
+.gallery-viewport {
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    padding: 20px 0 40px 0;
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-viewport::-webkit-scrollbar { display: none; }
+
+.carousel-track { display: flex; padding-left: 25px; }
+
+.carousel-track a {
+    flex: 0 0 82vw;
+    margin-right: 18px;
+    scroll-snap-align: center;
+}
+
+.carousel-track img {
+    width: 100%;
+    height: 500px; /* Ridotto leggermente per armonia mobile */
+    object-fit: contain;
+    background: #232326; /* Leggero contrasto interno alla card */
+    border: 0.5px solid #3A3A3C;
+    border-radius: 6px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* STORIA */
+.story-section {
+    padding: 10px 30px 120px 30px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.audio-btn {
+    width: 100%;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--text-primary);
+    padding: 16px;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    border-radius: 4px;
+}
+
+.story-text p {
+    line-height: 1.9;
+    color: var(--text-primary);
+    text-align: justify;
+    font-size: 0.95rem;
+    font-weight: 300;
+}
+
+/* FOOTER CON ANTEPRIMA NOMI */
+.footer-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 70px; /* Un po' più alto per far stare i nomi */
+    background: var(--bg-darker);
+    border-top: 0.5px solid var(--accent);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* BLOCCHI DI NAVIGAZIONE LATERALI */
+.nav-arrow-block {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 10px;
+    height: 100%;
+    width: 30%; /* Prende il 30% dello spazio per lato */
+    gap: 8px;
+}
+
+.left-side { justify-content: flex-start; border-right: 0.1px solid rgba(142, 142, 147, 0.1); }
+.right-side { justify-content: flex-end; border-left: 0.1px solid rgba(142, 142, 147, 0.1); }
+
+/* FRECCIA (Icona) */
+.nav-label {
+    color: var(--silver) !important;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* NOME DEL PARTECIPANTE ACCANTO ALLA FRECCIA */
+.participant-preview {
+    font-size: 0.55rem;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap; /* Non manda a capo il nome */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Se il nome è troppo lungo mette i puntini */
+}
+
+/* INFO CENTRALI */
+.footer-center-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 40%;
+    justify-content: center;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.info-item span {
+    font-size: 0.45rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.info-item a {
+    color: var(--text-primary) !important;
+    text-decoration: none;
+    font-size: 0.6rem;
+}
+
+.v-divider {
+    width: 1px;
+    height: 15px;
+    background: var(--accent);
+    opacity: 0.2;
+}
+
+
+/*INIZIO GRID LISTA SIMBOLI*/
+/* --- GRID VERTICALE SMOOTH --- */
+.vertical-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Spazio tra le card verticali */
+    padding: 20px 20px 120px 20px; /* Padding bottom per non finire sotto il footer */
+    width: 100%;
+    max-width: 800px; /* Larghezza massima per tablet */
+    margin: 0 auto;
+}
+
+/* Riutilizziamo le classi delle Card della Home ma le adattiamo alla Grid */
+.grid-item {
+    width: 100%; /* Occupa tutto lo spazio disponibile nel contenitore */
+    max-width: 400px; /* Evita che diventino giganti su schermi larghi */
+    animation: fadeInSmooth 0.6s ease forwards; /* Effetto apparizione */
+}
+
+/* Effetto apparizione Smooth quando carichi la pagina */
+@keyframes fadeInSmooth {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modifica specifica per l'altezza immagine nella grid per non farla troppo ingombrante */
+.grid-item .card-image {
+    height: 120px;
+    width: 120px;
+}
+
+.grid-item .card-content {
+    padding-bottom: 30px;
+}
+
+/* Se l'utente ha uno schermo più grande (Tablet o Desktop), mettiamone due per riga */
+@media (min-width: 700px) {
+    .vertical-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .grid-item {
+        width: calc(50% - 20px); /* Due card per riga */
+    }
+}
+/*FINE GRID LISTA SIMBOLI*/

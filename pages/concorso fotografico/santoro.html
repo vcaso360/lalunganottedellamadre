@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santoro - La Lunga Notte della Madre</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css">
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="menu-btn" onclick="toggleMenu()">☰ MENU</div>
+            <div class="logo-wrapper">
+                <img src="../../images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <div class="nav-spacer"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/pages/lista_concorrenti.html">CONCORSO</a></li>
+            <li><a href="/pages/lista_simboli.html">SIMBOLI</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="artist-header">
+            <h1 class="artist-name">SANTORO ANDREA</h1>
+            <div class="separator-line"></div>
+            <p class="collection-title">MATER DOLOROSA</p>
+        </header>
+
+        <div class="gallery-viewport">
+            <div class="pswp-gallery carousel-track" id="my-gallery">
+                <!-- Foto 1 -->
+                <a href="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 1.jpg" data-pswp-width="1200" data-pswp-height="1600">
+                    <img src="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 1.jpg" alt="Foto 1">
+                </a>
+                <!-- Foto 2 -->
+                <a href="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 2.jpg" data-pswp-width="1600" data-pswp-height="1200">
+                    <img src="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 2.jpg" alt="Foto 2">
+                </a>
+                <!-- Foto 3 -->
+                <a href="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 3.jpg" data-pswp-width="1200" data-pswp-height="1600">
+                    <img src="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 3.jpg" alt="Foto 3">
+                </a>
+                <!-- Foto 4 -->
+                <a href="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 4.jpg" data-pswp-width="1600" data-pswp-height="1200">
+                    <img src="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 4.jpg" alt="Foto 4">
+                </a>
+                <!-- Foto 5 -->
+                <a href="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 5.jpg" data-pswp-width="1600" data-pswp-height="1200">
+                    <img src="../../images/concorso fotografico/SANTORO Andrea/Santoro Andrea - Mater Dolorosa - 5.jpg" alt="Foto 5">
+                </a>
+            </div>
+        </div>
+
+        <section class="story-section">
+            <button class="audio-btn" onclick="toggleAudio()">
+                <span id="play-icon">▶</span> ASCOLTA IL RACCONTO
+            </button>
+            <audio id="story-audio" src="../../audio/concorso fotografico/santoro.mp3"></audio>
+            
+            <div class="story-text">
+                <p>
+Questo racconto ripercorre alcuni momenti del Pellegrinaggio dell'Addolorata: a partire dal pendio con la prima foto, uno dei portatori delle Pesare, il piccolo Samuele con semplicità e compostezza. Nella seconda e terza foto il focus è sulla Beata Vergine giunta nel borgo, il dolore di una madre con il cuore trafitto. Nella quarta foto, invece, sono rappresentate le Poste, spalla a spalla, quel legame unico che si può comprendere a pieno solo vivendolo. Infine, si ritorna a Lei, su via Duomo al rientro. </p>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer-mobile">
+    <!-- Navigazione a Sinistra -->
+    <a href="rosa.html" class="nav-arrow-block left-side">
+        <span class="nav-label">❮</span>
+        <span class="participant-preview">ROSA</span>
+    </a>
+
+    <!-- Contatti Centrali (Sottili) -->
+    <div class="footer-center-info">
+        <div class="info-item">
+            <span>Sviluppatore</span>
+            <a href="https://www.instagram.com/caso.exe/">@caso.exe</a>
+        </div>
+        <div class="v-divider"></div>
+        <div class="info-item">
+            <span>FACEBOOK</span>
+            <a href="https://www.facebook.com/profile.php?id=100064837565306">SEGUICI</a>
+        </div>
+    </div>
+
+    <!-- Navigazione a Destra -->
+    <a href="scialpi.html" class="nav-arrow-block right-side">
+        <span class="participant-preview">SCIALPI</span>
+        <span class="nav-label">❯</span>
+    </a>
+</footer>
+
+    <script type="module">
+        import PhotoSwipeLightbox from 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe-lightbox.esm.min.js';
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#my-gallery',
+            children: 'a',
+            pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
+        });
+        lightbox.init();
+    </script>
+    <script>
+        function toggleAudio() {
+            const audio = document.getElementById('story-audio');
+            const btn = document.getElementById('play-icon');
+            if (audio.paused) { audio.play(); btn.innerText = "⏸"; } 
+            else { audio.pause(); btn.innerText = "▶"; }
+        }
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

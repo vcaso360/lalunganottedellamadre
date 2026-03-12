@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostra dei Simboli - Lista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style/style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="menu-btn" onclick="toggleMenu()">☰ MENU</div>
+            <div class="logo-wrapper">
+                <img src="../../images/logo.png" alt="Logo" class="logo-img">
+            </div>
+            <div class="nav-spacer"></div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/index.html">HOME</a></li>
+            <li><a href="/pages/lista_concorrenti.html">CONCORSO</a></li>
+            <li><a href="/pages/lista_simboli.html">SIMBOLI</a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="artist-header">
+            <h1 class="artist-name">MOSTRA DEI SIMBOLI</h1>
+            <div class="separator-line"></div>
+            <p class="collection-title">I TESORI DELLA CONFRATERNITA</p>
+        </header>
+
+        <!-- GRID VERTICALE DELLE CARD  croci croce dei misteri candelabri vestiario addolorata coppe base e sdanghe-->
+        <section class="vertical-grid">
+            
+            <!-- SIMBOLO 1 -->
+            <div class="card grid-item">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <div class="card-image">
+                        <img src="/images/mostra dei simboli/troccole.jpg" alt="Simbolo" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">Troccola</h2>
+                    <p class="description">Tipico Strumento che sostituisce le campane</p>
+                    <a href="/pages/mostra dei simboli/" class="button">DETTAGLI</a>
+                </div>
+            </div>
+
+            <!-- SIMBOLO 2 -->
+            <div class="card grid-item">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <div class="card-image">
+                        <img src="../../images/mostra dei simboli/pesare.jpg" alt="Simbolo" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">CROCE DEI MISTERI</h2>
+                    <p class="description">Croce che racchiude con pochi elementi la Passione di Cristo</p>
+                    <a href="simbolo_2.html" class="button">DETTAGLI</a>
+                </div>
+            </div>
+
+             <!-- SIMBOLO 3-->
+            <div class="card grid-item">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <div class="card-image">
+                        <img src="../../images/mostra dei simboli/pesare.jpg" alt="Simbolo" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">PESARE</h2>
+                    <p class="description">Rappresentano la Fatica e la Penitenza</p>
+                    <a href="simbolo_2.html" class="button">DETTAGLI</a>
+                </div>
+            </div>
+
+            <!-- SIMBOLO 4-->
+            <div class="card grid-item">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <div class="card-image">
+                        <img src="../../images/mostra dei simboli/pesare.jpg" alt="Simbolo" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">MAZZE</h2>
+                    <p class="description">Utilizzate durante la processione</p>
+                    <a href="simbolo_2.html" class="button">DETTAGLI</a>
+                </div>
+            </div>
+            
+            <!-- SIMBOLO 5-->
+            <div class="card grid-item">
+                <div class="image-content">
+                    <span class="overlay"></span>
+                    <div class="card-image">
+                        <img src="../../images/mostra dei simboli/pesare.jpg" alt="Simbolo" class="card-img">
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h2 class="name">CROCI</h2>
+                    <p class="description">Utilizzate durante la processione</p>
+                    <a href="simbolo_2.html" class="button">DETTAGLI</a>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer class="footer-mobile index-footer">
+        <div class="footer-center-info">
+            <div class="info-item">
+                <span>Sviluppatore</span>
+                <a href="https://www.instagram.com/caso.exe/">@caso.exe</a>
+            </div>
+            <div class="v-divider"></div>
+            <div class="info-item">
+                <span>FACEBOOK</span>
+                <a href="https://www.facebook.com/confraternitaaddoloratataranto">SEGUICI</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
