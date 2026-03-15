@@ -44,33 +44,34 @@
         </div>
 
         <section class="story-section">
-            <button class="audio-btn" onclick="toggleAudio()">
-                <span id="play-icon">▶</span> ASCOLTA IL RACCONTO
-            </button>
-            <audio id="story-audio" src="../../audio/mostra dei simboli/troccola_ita.mp3"></audio>
+    <!-- SEZIONE ITALIANO -->
+    <button class="audio-btn" onclick="toggleAudio('ita')">
+        <span id="play-icon-ita">▶</span> ASCOLTA IL RACCONTO
+    </button>
+    <audio id="story-audio-ita" src="../../audio/mostra dei simboli/troccola_ita.mp3"></audio>
+    
+    <div class="story-text">
+        <p>
+            LA "TROCCOLA": ANTICO STRUMENTO MUSICALE LITURGICO POPOLARE DETTO ANCHE "CREPITACOLO". IN USO NEI CONVENTI E NEI MONASTERI. VENIVA USATO NELLA SETTIMANA SANTA PER ANNUNCIARE L'INIZIO DELLE FUNZIONI LITURGICHE E PER RICHIAMARE I CONFRATI PER L'ORA DELLA PREGHIERA. È L'EMBLEMA DEI RITI DELLA PASSIONE A TARANTO. APRE I CORTEI PROCESSIONALI E NE REGOLA IL PASSO. 
             
-            <div class="story-text">
-                <p>
-                    LA "TROCCOLA": ANTICO STRUMENTO MUSICALE LITURGICO POPOLARE DETTO ANCHE "CREPITACOLO". IN USO NEI CONVENTI E NEI MONASTERI. VENIVA USATO NELLA SETTIMANA SANTA PER ANNUNCIARE L'INIZIO DELLE FUNZIONI LITURGICHE E PER RICHIAMARE I CONFRATI PER L'ORA DELLA PREGHIERA. È L'EMBLEMA DEI RITI DELLA PASSIONE A TARANTO. APRE I CORTEI PROCESSIONALI E NE REGOLA IL PASSO. 
+        </p>
+    </div>
 
-                </p>
-            </div>
+    <div class="separator-line"></div>
 
-            <div class="separator-line"></div>
+    <!-- SEZIONE INGLESE -->
+    <button class="audio-btn" onclick="toggleAudio('eng')">
+        <span id="play-icon-eng">▶</span> LISTEN TO THE STORY
+    </button>
+    <audio id="story-audio-eng" src="../../audio/mostra dei simboli/troccola_eng.mp3"></audio>
+    
+    <div class="story-text">
+        <p>
+            THE “TROCCOLA”: AN ANCIENT POPULAR LITURGICAL MUSICAL INSTRUMENT ALSO KNOWN AS THE “CREPITACOLO.” USED IN CONVENTS AND MONASTERIES. IT WAS USED DURING HOLY WEEK TO ANNOUNCE THE START OF LITURGICAL SERVICES AND TO CALL THE MONKS TO PRAYER. IT IS THE SYMBOL OF THE PASSION RITES IN TARANTO. IT LEADS THE PROCESSIONAL PARADES AND SETS THEIR PACE. 
 
- <button class="audio-btn" onclick="toggleAudio()">
-                <span id="play-icon">▶</span> LISTEN TO THE STORY
-            </button>
-            <audio id="story-audio" src="../../audio/mostra dei simboli/troccola_eng.mp3"></audio>
-            
-            <div class="story-text">
-                <p>
-                THE “TROCCOLA”: AN ANCIENT POPULAR LITURGICAL MUSICAL INSTRUMENT ALSO KNOWN AS THE “CREPITACOLO.” USED IN CONVENTS AND MONASTERIES. IT WAS USED DURING HOLY WEEK TO ANNOUNCE THE START OF LITURGICAL SERVICES AND TO CALL THE MONKS TO PRAYER. IT IS THE SYMBOL OF THE PASSION RITES IN TARANTO. IT LEADS THE PROCESSIONAL PARADES AND SETS THEIR PACE. 
-
-                </p>
-            </div>
-            
-        </section>
+        </p>
+    </div>
+</section>
     </main>
 
 <footer class="footer-mobile">
@@ -110,15 +111,30 @@
         lightbox.init();
     </script>
     <script>
-        function toggleAudio() {
-            const audio = document.getElementById('story-audio');
-            const btn = document.getElementById('play-icon');
-            if (audio.paused) { audio.play(); btn.innerText = "⏸"; } 
-            else { audio.pause(); btn.innerText = "▶"; }
-        }
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
+        function toggleAudio(lang) {
+    // Seleziona l'audio e l'icona corretti in base alla lingua passata ('ita' o 'eng')
+    const audio = document.getElementById('story-audio-' + lang);
+    const btn = document.getElementById('play-icon-' + lang);
+    
+    // Opzionale: Ferma l'altro audio se sta suonando
+    const altraLang = (lang === 'ita') ? 'eng' : 'ita';
+    const altroAudio = document.getElementById('story-audio-' + altraLang);
+    const altroBtn = document.getElementById('play-icon-' + altraLang);
+    
+    if (!altroAudio.paused) {
+        altroAudio.pause();
+        altroBtn.innerText = "▶";
+    }
+
+    // Gestione Play/Pause
+    if (audio.paused) { 
+        audio.play(); 
+        btn.innerText = "⏸"; 
+    } else { 
+        audio.pause(); 
+        btn.innerText = "▶"; 
+    }
+}
     </script>
 </body>
 </html>
